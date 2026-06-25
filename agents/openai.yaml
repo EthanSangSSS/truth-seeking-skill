@@ -1,0 +1,4 @@
+interface:
+  display_name: "Truth Seeking"
+  short_description: "Evidence-based root-cause truth investigations"
+  default_prompt: "Use $truth-seeking to investigate the root truth behind this issue from evidence, first principles, incentives, and falsifiable predictions."
