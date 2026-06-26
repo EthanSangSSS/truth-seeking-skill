@@ -24,7 +24,7 @@ grep -q '^---$' "$ROOT/SKILL.md"
 grep -q '^name: truth-seeking$' "$ROOT/SKILL.md"
 grep -q '^description: ' "$ROOT/SKILL.md"
 
-if grep -R -nE 'deep-research-router|deep-mining-automation|reliable-signal-gathering|/Users/ethan|AI Agent Database|Feishu|Obsidian' "$ROOT" \
+if grep -R -nE 'deep-research-router|deep-mining-automation|reliable-signal-gathering|/Users/[^[:space:]]+|AI Agent Database|Feishu|Obsidian' "$ROOT" \
   --exclude-dir=.git \
   --exclude='validate.sh'; then
   echo "Private/local coupling detected." >&2
