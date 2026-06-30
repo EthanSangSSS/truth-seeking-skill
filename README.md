@@ -2,7 +2,7 @@
 
 Evidence-constrained root-cause investigation for AI agents.
 
-This skill helps an agent investigate disputed, complex, or narrative-heavy questions without collapsing into media summaries, moralizing, conspiracy overreach, or false certainty. It produces the strongest current causal model, tied to source tiers, assumptions, uncertainty, falsification tests, and leading indicators.
+This skill helps an agent investigate disputed, complex, or narrative-heavy questions without collapsing into media summaries, moralizing, conspiracy overreach, or false certainty. It produces the strongest current causal model (highest-confidence causal model), tied to source tiers, roles, assumptions, uncertainty, falsification tests, and leading indicators.
 
 ## Use Cases
 
@@ -14,19 +14,29 @@ This skill helps an agent investigate disputed, complex, or narrative-heavy ques
 
 ## What It Produces
 
-For a quick answer:
+Mini Mode:
 
-1. Highest-confidence answer
-2. Why common explanations are insufficient
-3. Key evidence
+1. Highest-confidence causal model
+2. Why surface explanations are insufficient
+3. Key evidence (complying with Source Policy, including access dates)
 4. First-principles mechanism
 5. Prediction and leading indicators
 
-For a deep report:
+Standard Mode:
 
 - Executive summary
+- Research Plan Gate
+- Common narratives and why they are incomplete
+- Claim Ledger with evidence roles and access dates
+- First-principles model and incentive map
+- Forecast with leading indicators
+
+Deep Mode:
+
+- Research Plan Gate
+- Executive summary
 - Claim map
-- Evidence chain with source tiers
+- Claim Ledger with source tiers, roles, access dates, and failure modes
 - First-principles model
 - Incentive and power map
 - Psychology and economics lens
@@ -50,7 +60,7 @@ cp -R truth-seeking-skill ~/.codex/skills/truth-seeking
 Then invoke it with:
 
 ```text
-Use $truth-seeking to investigate the root truth behind [topic].
+Use $truth-seeking to build an evidence-constrained causal model for [topic].
 ```
 
 ### Other agent frameworks
@@ -59,17 +69,18 @@ If your agent framework does not support Codex-style skills, use:
 
 - `SKILL.md` as the system or developer instruction.
 - `references/truth-protocol.md` as the detailed reference file.
+- `references/source-policy.md` as the source quality policy.
 - `templates/truth-seeking-report.md` as the output template.
 
 ## Validation
 
-Run the lightweight repository checks:
+Run the repository validation checks:
 
 ```bash
 bash tests/validate.sh
 ```
 
-The script checks required files, frontmatter shape, and common private/local coupling strings.
+The script checks required files, runs the adversarial fixture suite, checks for banned absolute phrasings, and flags private/local coupling.
 
 ## File Structure
 
@@ -79,11 +90,22 @@ The script checks required files, frontmatter shape, and common private/local co
 ├── agents/
 │   └── openai.yaml
 ├── references/
+│   ├── source-policy.md
 │   └── truth-protocol.md
 ├── templates/
 │   └── truth-seeking-report.md
 ├── examples/
 │   └── fictional-platform-decline.md
+├── tests/
+│   ├── check_fixtures.sh
+│   ├── validate.sh
+│   └── fixtures/
+│       ├── conspiracy_bait.md
+│       ├── high_stakes_advice.md
+│       ├── moralization_bait.md
+│       ├── overconfident_forecast.md
+│       ├── rumor.md
+│       └── stale_facts.md
 ├── LICENSE
 └── README.md
 ```
@@ -114,10 +136,12 @@ Use $truth-seeking to investigate why [organization/market/system] is failing.
 
 Requirements:
 - Do not repeat media narratives.
-- Use first principles and source tiers.
-- Map incentives, power, money, institutions, psychology, and information asymmetry.
-- Reject weak common explanations.
-- Provide confidence, falsification tests, and leading indicators.
+- Use source tiers and roles.
+- Build a first-principles causal model.
+- Map incentives, institutions, money, power, psychology, and information asymmetry where relevant.
+- Reject weak common narratives.
+- State confidence, unknowns, falsification tests, and leading indicators.
+- Do not claim absolute truth.
 ```
 
 ## License

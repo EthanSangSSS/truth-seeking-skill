@@ -30,6 +30,17 @@ Before doing a full investigation, classify the request:
 | "What should I do?" | Yes | Decision implications with assumptions |
 | "Is this rumor true?" | Partial | Rumor/fact separation |
 
+## Research Plan Gate
+
+Before starting deep research, formulate a Research Plan Gate using the following fields:
+- `question_type`: Factual / Causal / Strategic / Decision
+- `decision_relevance`: Why does this matter? What decision is riding on this?
+- `key_claims_to_verify`: Core claims that must be proved/disproved to evaluate the model
+- `primary_sources_needed`: Which Tier 1 / official sources are required
+- `contrary_evidence_needed`: What evidence would disprove the main hypothesis
+- `freshness_requirement`: Required freshness of the evidence (e.g., date-restricted, live-search required)
+- `stop_condition`: When to stop researching (e.g., finding the primary filing, resolving the bottleneck, running out of search depth)
+
 ## Lens Checklist
 
 Use only lenses that improve explanatory power.
@@ -60,7 +71,15 @@ Use only lenses that improve explanatory power.
 - Are there missing base rates or denominators?
 - Are we overweighting visible scandals because invisible normal operation is harder to observe?
 
-## Evidence Discipline
+## Evidence Discipline & Source Policy
+
+All evidence collection and evaluation must follow the [Source Policy](source-policy.md):
+- **Tiers**: Tier 1 (Primary/Official), Tier 2 (Expert/Structured), Tier 3 (Speculative/Unstructured).
+- **Core Rule**: Tier 3 evidence is strictly prohibited from supporting any core/central conclusions.
+- **Claim Ledger Requirements**:
+  - Assign `evidence_role`: `directly_supports`, `partially_supports`, `context_only`, `contradicts`, or `weak_or_unverified`.
+  - Record `access_date` (YYYY-MM-DD) for all evidence.
+  - Identify `failure_mode` (potential bias, narrative capture, stale data, etc.) for each source.
 
 | Evidence type | Use | Risk |
 |---|---|---|
@@ -97,16 +116,26 @@ For medical, legal, tax, employment, finance, safety, or compliance questions:
 Use this structure for substantial reports:
 
 ```markdown
+## Research Plan Gate
+- **Question Type**: ...
+- **Decision Relevance**: ...
+- **Key Claims to Verify**: ...
+- **Primary Sources Needed**: ...
+- **Contrary Evidence Needed**: ...
+- **Freshness Requirement**: ...
+- **Stop Condition**: ...
+
 ## Executive Summary
-最高置信结论: ...
+最高置信因果模型: ...
 关键不确定性: ...
 未来最重要观察点: ...
 
 ## Common Narratives And Why They Are Incomplete
 | Narrative | What it gets right | Where it fails |
 
-## Evidence Chain
-| Claim | Source | Tier | Supports | Confidence |
+## Claim Ledger
+*All sources must comply with the Source Policy. Tier 3 sources are strictly prohibited from supporting core/central conclusions.*
+| Claim | Source | Tier | Evidence Role | Access Date | Failure Mode | Confidence |
 
 ## Unknowns And Assumptions
 Known unknowns:
@@ -145,28 +174,50 @@ Leading indicators:
 ...
 ```
 
-## Mini Mode
+## Output Modes
 
-When the user wants a concise answer, compress to the user's language. English labels are:
+Choose the output mode based on the user's preference or the depth of the investigation:
 
-1. Most likely truth
+### 1. Mini Mode
+When the user wants a concise answer. Keep it compact and direct:
+English:
+1. Highest-confidence causal model
 2. Why surface explanations are insufficient
-3. Key evidence
+3. Key evidence (Tier 1/2 only, with access dates)
 4. Root mechanism
 5. Future indicators
 
-Chinese labels are:
-
-1. 最可能的真相
+Chinese:
+1. 最高置信因果模型
 2. 为什么表层解释不够
-3. 关键证据
+3. 关键证据（仅限 Tier 1/2，附访问日期）
 4. 底层机制
 5. 未来观察指标
+
+### 2. Standard Mode
+Medium-length answer. Includes structural mapping:
+- Executive Summary (Highest-confidence causal model, Key uncertainty, Leading indicator)
+- Research Plan Gate (Question Type, Decision Relevance, Key Claims, Stop Condition)
+- Common Narratives and why they are incomplete
+- Claim Ledger (including source tiers, `evidence_role`, `access_date`, and `failure_mode`; Tier 3 must not support core conclusions)
+- First-Principles Model & Incentive Map
+- Forecast with leading indicators
+
+### 3. Deep Mode
+Comprehensive investigation following the full template (`templates/truth-seeking-report.md`):
+- All components of Standard Mode
+- Complete Claim Ledger complying fully with the [Source Policy](source-policy.md)
+- Psychology and Economics Lens
+- Hardened Causal Model / Graph
+- Comprehensive Competing Explanations evaluation
+- Falsification Tests
+- Multi-case scenario forecast
+- Source Gaps analysis
 
 ## Reusable Prompt
 
 ```text
-Use truth-seeking. Investigate the root truth behind: [QUESTION].
+Use truth-seeking. Build an evidence-constrained causal model for: [QUESTION].
 
 Requirements:
 - Separate facts, interpretation, prediction, and value judgments.

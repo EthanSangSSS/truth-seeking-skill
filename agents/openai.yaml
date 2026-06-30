@@ -1,4 +1,4 @@
 interface:
   display_name: "Truth Seeking"
-  short_description: "Evidence-based root-cause truth investigations"
-  default_prompt: "Use $truth-seeking to investigate the root truth behind this issue from evidence, first principles, incentives, and falsifiable predictions."
+  short_description: "Evidence-constrained causal model investigations"
+  default_prompt: "Use $truth-seeking to build an evidence-constrained causal model for this issue from evidence, first principles, incentives, and falsifiable predictions."

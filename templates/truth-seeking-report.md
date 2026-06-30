@@ -1,8 +1,17 @@
 # Truth-Seeking Report: [Topic]
 
+## Research Plan Gate
+- **Question Type**: [factual | causal | strategic | decision]
+- **Decision Relevance**: [What decision depends on this model?]
+- **Key Claims to Verify**: [List of core claims to verify]
+- **Primary Sources Needed**: [Tier 1 / Tier 2 sources needed]
+- **Contrary Evidence Needed**: [What would falsify the working hypothesis?]
+- **Freshness Requirement**: [Required update window or access date constraint]
+- **Stop Condition**: [When to stop researching and finalize the model]
+
 ## Executive Summary
 
-Highest-confidence conclusion:
+Highest-confidence causal model:
 
 Key uncertainty:
 
@@ -23,11 +32,12 @@ Most important leading indicator:
 |---|---|---|
 |  |  |  |
 
-## Evidence Chain
+## Claim Ledger
+*All sources must comply with the [Source Policy](../references/source-policy.md). Tier 3 sources are strictly prohibited from supporting core/central conclusions.*
 
-| Claim | Source | Tier | Supports | Confidence |
-|---|---|---|---|---|
-|  |  |  |  |  |
+| Claim | Source | Tier | Evidence Role | Access Date | Failure Mode | Confidence |
+|---|---|---|---|---|---|---|
+| [Claim description] | [Source name/URL] | [Tier 1/2/3] | [directly_supports | partially_supports | context_only | contradicts | weak_or_unverified] | [YYYY-MM-DD] | [Bias, capture, stale, etc.] | [High | Medium | Low] |
 
 ## Unknowns And Assumptions
 
