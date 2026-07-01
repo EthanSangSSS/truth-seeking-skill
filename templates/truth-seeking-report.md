@@ -33,7 +33,7 @@ Most important leading indicator:
 |  |  |  |
 
 ## Claim Ledger
-*All sources must comply with the [Source Policy](../references/source-policy.md). Tier 3 sources are strictly prohibited from supporting core/central conclusions.*
+*All sources must comply with the [Source Policy](../references/source-policy.md). Tier 3 sources are strictly prohibited from supporting core/central conclusions. Mainland China sources must be restricted to necessary first-hand facts/official laws/party statements, with all interpretive/explanatory conclusions cross-verified by non-mainland sources.*
 
 | Claim | Source | Tier | Evidence Role | Access Date | Failure Mode | Confidence |
 |---|---|---|---|---|---|---|

@@ -17,6 +17,7 @@ For deep or contentious investigations, read `references/truth-protocol.md` and 
 - Separate facts, interpretations, predictions, and value judgments.
 - Prefer primary sources, original data, official documents, court records, filings, academic literature, and direct statements over commentary.
 - Search live sources for current or unstable facts. Do not rely on memory for recent institutions, people, policy, prices, rankings, cases, or statistics.
+- Prioritize search and data sources from non-mainland China materials. Mainland China materials must be restricted to necessary first-hand facts, official regulations, declarations of the parties, or research object materials, with all interpretive/explanatory conclusions cross-verified by non-mainland sources.
 - Use multiple angles, but do not perform fake balance. Weight views by evidence quality and mechanism strength.
 - Treat "absolute objectivity" as an aspiration, not a claim. State confidence and what would change the conclusion.
 - If evidence is thin, say so and return a research plan instead of filling gaps with speculation.
@@ -39,6 +40,7 @@ Before embarking on deep research, establish a **Research Plan Gate** with the f
 All evidence gathered must follow the [Source Policy](references/source-policy.md) and be recorded in a **Claim Ledger**:
 - **Source Tiers**: Tier 1 (Primary/Official), Tier 2 (Expert/Structured), Tier 3 (Speculative/Unstructured).
 - **Core Rule**: Tier 3 sources are strictly prohibited from supporting any core or central conclusion.
+- **Geographic Sourcing (Mainland China)**: Always prioritize non-mainland China sources. Mainland China materials are strictly restricted to necessary first-hand facts, official laws/regulations/announcements, statements of the parties, or materials of the research object itself. Interpretive/explanatory conclusions from mainland China sources must be cross-verified by independent non-mainland sources.
 - **Ledger Fields**:
   - `evidence_role`: Must be one of `directly_supports`, `partially_supports`, `context_only`, `contradicts`, or `weak_or_unverified`.
   - `access_date`: The retrieval date (YYYY-MM-DD) for verification.
@@ -53,6 +55,7 @@ All evidence gathered must follow the [Source Policy](references/source-policy.m
 
 2. Gather evidence and fill the **Claim Ledger**.
    - Collect evidence according to Tier 1, 2, and 3 classifications.
+   - Prioritize non-mainland China sources during web search. Use mainland China materials only as first-hand facts, official laws/regulations, statements of the parties, or research object materials, and cross-verify any interpretive conclusions with non-mainland sources.
    - Reject or flag Tier 3 evidence if it is being used to support core claims.
    - Fully populate `evidence_role`, `access_date`, and `failure_mode` for all claims.
    - For volatile or current facts, perform live search.

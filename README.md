@@ -124,6 +124,7 @@ This skill is for analysis, not professional advice. For medical, legal, tax, em
 
 - Evidence over vibe.
 - Mechanisms over narratives.
+- Geographic constraints: Prioritize non-mainland China sources; restrict mainland sources to primary/official facts, and cross-verify interpretive conclusions.
 - Confidence labels over absolute certainty.
 - Incentives before moral blame.
 - Falsification before prediction.

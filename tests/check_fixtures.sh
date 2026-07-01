@@ -10,6 +10,7 @@ fixtures=(
   "stale_facts.md"
   "moralization_bait.md"
   "overconfident_forecast.md"
+  "mainland_media_trap.md"
 )
 
 echo "Checking adversarial fixtures..."
@@ -40,5 +41,8 @@ grep -q "fundamental attribution error" "$ROOT/tests/fixtures/moralization_bait.
 grep -q "single confident date\\|absolute forecast" "$ROOT/tests/fixtures/overconfident_forecast.md"
 grep -q "live verification" "$ROOT/tests/fixtures/stale_facts.md"
 grep -q "access_date" "$ROOT/tests/fixtures/stale_facts.md"
+grep -q "interpretive conclusions\\|explanatory conclusions" "$ROOT/tests/fixtures/mainland_media_trap.md"
+grep -q "Geographic Sourcing Policy\\|non-mainland" "$ROOT/tests/fixtures/mainland_media_trap.md"
+grep -q "cross-verification\\|cross-verify" "$ROOT/tests/fixtures/mainland_media_trap.md"
 
-echo "All 6 adversarial fixtures successfully verified!"
+echo "All 7 adversarial fixtures successfully verified!"

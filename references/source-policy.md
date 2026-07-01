@@ -30,3 +30,15 @@ Before completing an investigation, the agent must check if:
 1. Every core claim has at least one Tier 1 source or two independent Tier 2 sources.
 2. Any core claim relying solely on Tier 3 evidence is demoted or flagged.
 3. Every entry in the ledger has an assigned `evidence_role`, `access_date`, and `failure_mode`.
+4. Any mainland China source used is strictly limited to necessary first-hand facts, official laws/regulations/announcements, statements by the parties involved, or materials of the research object itself, with any interpretive/explanatory conclusions cross-verified by independent non-mainland sources.
+
+## 5. Geographic Sourcing Constraints (Mainland China)
+
+To prevent narrative capture, single-source inducement, and government-guided bias:
+- **Prioritize Non-Mainland Sources**: When conducting web searches, the agent must always prioritize and favor sources and materials from outside mainland China (e.g., global databases, international media, independent research institutions, non-mainland expert analysis).
+- **Restricted Use of Mainland China Sources**: Materials from mainland China are strictly restricted. They are ONLY permitted to be used for:
+  1. Necessary first-hand factual sources (e.g., original local statistics, raw data).
+  2. Official laws, regulations, and government policy announcements.
+  3. Declarations or statements of the parties involved (e.g., official corporate releases, public statements of key figures).
+  4. Materials of the research object itself (e.g., local company reports, product specifications).
+- **Mandatory Cross-Verification**: Any interpretive or explanatory conclusions contained in mainland China sources must NOT be accepted as objective fact. They must be cross-verified and validated using high-quality, independent non-mainland sources before being incorporated into the causal model.

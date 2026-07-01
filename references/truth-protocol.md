@@ -76,6 +76,7 @@ Use only lenses that improve explanatory power.
 All evidence collection and evaluation must follow the [Source Policy](source-policy.md):
 - **Tiers**: Tier 1 (Primary/Official), Tier 2 (Expert/Structured), Tier 3 (Speculative/Unstructured).
 - **Core Rule**: Tier 3 evidence is strictly prohibited from supporting any core/central conclusions.
+- **Geographic Sourcing (Mainland China)**: Always prioritize non-mainland China sources. Mainland China materials are strictly restricted to necessary first-hand facts, official laws/regulations/announcements, statements by the parties involved, or materials of the research object itself. Interpretive/explanatory conclusions from mainland China sources must be cross-verified by independent non-mainland sources.
 - **Claim Ledger Requirements**:
   - Assign `evidence_role`: `directly_supports`, `partially_supports`, `context_only`, `contradicts`, or `weak_or_unverified`.
   - Record `access_date` (YYYY-MM-DD) for all evidence.
